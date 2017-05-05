@@ -26,5 +26,10 @@ pipeline {
         echo 'Image has been uploaded to Azure container Registry'
       }
     }
+    stage('Publish to Kubernetes') {
+      steps {
+        sh 'cd *.parent/ && mvn initialize fabric8:json fabric8:apply'
+      }
+    }
   }
 }
