@@ -8,7 +8,16 @@ pipeline {
     }
     stage('Package') {
       steps {
-        sh 'cd *.parent/ && mvn initialize clean package'
+        parallel(
+          "Package": {
+            sh 'cd *.parent/ && mvn initialize clean package'
+            
+          },
+          "Docker login": {
+            sh 'docker login macyregistry.azurecr.io -u macyregistry -p "+==+=H+G+JHm3hFGU=XTg+WEn1vjEIsp"'
+            
+          }
+        )
       }
     }
     stage('Build Docker image') {
