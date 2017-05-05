@@ -84,7 +84,7 @@
 		</globalVariable>
 		<globalVariable>
 			<name>//tibco.bwce.sample.binding.rest.BookStore//dbUserName</name>
-			<value>#JDBC_USERNAME#</value>
+			<value>#JDBC_USER#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
