@@ -11,5 +11,11 @@ pipeline {
         sh 'cd *.parent/ && mvn initialize clean package'
       }
     }
+    stage('Build Docker image') {
+      steps {
+        sh 'cd *.parent/ && mvn initialize docker:build docker:push'
+        echo 'Image has been uploaded to Azure container Registry'
+      }
+    }
   }
 }
