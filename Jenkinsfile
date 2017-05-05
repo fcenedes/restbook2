@@ -9,8 +9,8 @@ pipeline {
     stage('Package') {
       steps {
         parallel(
-          "Package": {
-            sh 'cd *.parent/ && mvn initialize clean package'
+          "Clean project": {
+            sh 'cd *.parent/ && mvn initialize clean'
             
           },
           "Docker login": {
@@ -22,7 +22,7 @@ pipeline {
     }
     stage('Build Docker image') {
       steps {
-        sh 'cd *.parent/ && mvn initialize docker:build docker:push'
+        sh 'cd *.parent/ && mvn initialize package docker:build docker:push'
         echo 'Image has been uploaded to Azure container Registry'
       }
     }
