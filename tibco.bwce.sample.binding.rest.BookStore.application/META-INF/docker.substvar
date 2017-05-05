@@ -2,6 +2,14 @@
 <repository xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xmlns = "http://www.tibco.com/xmlns/repo/types/2002">
 	<globalVariables>
 		<globalVariable>
+			<name>dbPassword</name>
+			<value>#!Kb5JiQthWKLMdef62RQ3mcZVUuN8Ccoe+t0Yjgxd2vk=</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Password</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
 			<name>//tibco.bwce.sample.binding.rest.BookStore//BW.APPNODE.NAME</name>
 			<value></value>
 			<deploymentSettable>false</deploymentSettable>
@@ -51,7 +59,7 @@
 		</globalVariable>
 		<globalVariable>
 			<name>//tibco.bwce.sample.binding.rest.BookStore//dbDriver</name>
-			<value>#DB_DRIVER#</value>
+			<value>#JDBC_DRIVER#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
@@ -59,7 +67,7 @@
 		</globalVariable>
 		<globalVariable>
 			<name>//tibco.bwce.sample.binding.rest.BookStore//dbURL</name>
-			<value>#DB_URL#</value>
+			<value>#JDBC_URL#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
@@ -72,11 +80,11 @@
 			<type>Password</type>
 			<isOverride>true</isOverride>
 			<useLookupValue>true</useLookupValue>
-			<lookupValue>#DB_PASSWORD#</lookupValue>
+			<lookupValue>#JDBC_PASSWORD#</lookupValue>
 		</globalVariable>
 		<globalVariable>
 			<name>//tibco.bwce.sample.binding.rest.BookStore//dbUserName</name>
-			<value>#DB_USERNAME#</value>
+			<value>#JDBC_USERNAME#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
